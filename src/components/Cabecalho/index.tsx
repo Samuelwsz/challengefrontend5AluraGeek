@@ -23,9 +23,7 @@ const SearchInput = styled.input`
   outline: none;
   border-radius: 30px;
   background: #f5f5f5;
-  ::placeholder {
-    color: #aaa;
-  }
+ 
 `
 
 const SearchIcon = styled.div`
