@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { Children } from "react"
 
 const BotaoEstilizado = styled.button`
   display: flex;
@@ -12,15 +13,37 @@ const BotaoEstilizado = styled.button`
   font-weight: bold;
 `
 
+const BotaoEstilizadoSecundario = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 40px;
+  border: 1px solid #2a7ae4;
+  color: white;
+  background: #2a7ae4;
+  font-size: 16px;
+  font-weight: bold;
+`
+
 interface BotaoProps {
   titulo: string
+  variante?: string
   tipo?: "button" | "submit" | "reset"
 }
 
-export default function Botao({ titulo, tipo = "button" }: BotaoProps) {
+export default function Botao({
+  titulo,
+  tipo = "button",
+  variante = "primaria",
+}: BotaoProps) {
+  if (variante === "primaria") {
+    return (
+      <>
+        <BotaoEstilizado type={tipo}>{titulo}</BotaoEstilizado>
+      </>
+    )
+  }
   return (
-    <>
-      <BotaoEstilizado type={tipo}>{titulo}</BotaoEstilizado>
-    </>
+    <BotaoEstilizadoSecundario type={tipo}>{titulo}</BotaoEstilizadoSecundario>
   )
 }

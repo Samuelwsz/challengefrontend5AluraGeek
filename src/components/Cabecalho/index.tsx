@@ -46,7 +46,7 @@ export default function Cabecalho() {
     <>
       <Header>
         <Container>
-          <Row align="center" justify="center">
+          <Row align="center">
             <Col xs={12} sm={12} md={4} lg={4}>
               <img src={logo} alt="logo" />
             </Col>
