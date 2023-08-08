@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-grid-system"
 import { FiSearch } from "react-icons/fi"
 import logo from "../../assets/LogoAluraGeek.svg"
 import Botao from "../Botao"
+import { Link } from "react-router-dom"
 
 const Header = styled.header`
   color: white;
@@ -23,7 +24,6 @@ const SearchInput = styled.input`
   outline: none;
   border-radius: 30px;
   background: #f5f5f5;
- 
 `
 
 const SearchIcon = styled.div`
@@ -34,7 +34,7 @@ const SearchIcon = styled.div`
   color: #aaa;
 `
 
-const RightAlignedCol = styled(Col)`
+const AreaBotao = styled.div`
   display: flex;
   justify-content: flex-end;
 `
@@ -46,7 +46,9 @@ export default function Cabecalho() {
         <Container>
           <Row align="center">
             <Col xs={12} sm={12} md={4} lg={4}>
-              <img src={logo} alt="logo" />
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
             </Col>
             <Col xs={12} sm={12} md={4} lg={4}>
               <SearchContainer>
@@ -59,9 +61,13 @@ export default function Cabecalho() {
                 </SearchIcon>
               </SearchContainer>
             </Col>
-            <RightAlignedCol xs={12} sm={12} md={4} lg={4}>
-              <Botao titulo="Login" />
-            </RightAlignedCol>
+            <Col xs={12} sm={12} md={4} lg={4}>
+              <AreaBotao>
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <Botao titulo="Login" />
+                </Link>
+              </AreaBotao>
+            </Col>
           </Row>
           <Row></Row>
         </Container>
