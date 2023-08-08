@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "imagem": "/assets/StarWars/SWp1.png",
+    "nome": "p1",
+    "preco": "50",
+    "categoria": "StarWars"
+  },
+  {
+    "id": 2,
+    "imagem": "/assets/StarWars/SWp2.png",
+    "nome": "p2",
+    "preco": "100",
+    "categoria": "StarWars"
+  },
+  {
+    "id": 3,
+    "imagem": "/assets/Consoles/Cp1.png",
+    "nome": "p1",
+    "preco": "30",
+    "categoria": "Console"
+  }
+]

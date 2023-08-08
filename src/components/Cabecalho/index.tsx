@@ -3,7 +3,8 @@ import { Col, Container, Row } from "react-grid-system"
 import { FiSearch } from "react-icons/fi"
 import logo from "../../assets/LogoAluraGeek.svg"
 import Botao from "../Botao"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 const Header = styled.header`
   color: white;
@@ -40,6 +41,21 @@ const AreaBotao = styled.div`
 `
 
 export default function Cabecalho() {
+  const [showLoginButton, setShowLoginButton] = useState(true)
+  const location = useLocation()
+
+  useEffect(() => {
+    if (
+      location.pathname === "/login" ||
+      location.pathname === "/produtos" ||
+      location.pathname === "/addproduto"
+    ) {
+      setShowLoginButton(false)
+    } else {
+      setShowLoginButton(true)
+    }
+  }, [location.pathname])
+
   return (
     <>
       <Header>
@@ -62,11 +78,13 @@ export default function Cabecalho() {
               </SearchContainer>
             </Col>
             <Col xs={12} sm={12} md={4} lg={4}>
-              <AreaBotao>
-                <Link to="/login" style={{ textDecoration: "none" }}>
-                  <Botao titulo="Login" />
-                </Link>
-              </AreaBotao>
+              {showLoginButton && (
+                <AreaBotao>
+                  <Link to="/login" style={{ textDecoration: "none" }}>
+                    <Botao titulo="Login" />
+                  </Link>
+                </AreaBotao>
+              )}
             </Col>
           </Row>
           <Row></Row>
