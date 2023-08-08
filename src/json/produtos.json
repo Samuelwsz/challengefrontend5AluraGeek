@@ -2,22 +2,128 @@
   {
     "id": 1,
     "imagem": "/assets/StarWars/SWp1.png",
-    "nome": "p1",
+    "nome": "produto1",
     "preco": "50",
     "categoria": "StarWars"
   },
   {
     "id": 2,
     "imagem": "/assets/StarWars/SWp2.png",
-    "nome": "p2",
+    "nome": "produto2",
     "preco": "100",
     "categoria": "StarWars"
   },
   {
     "id": 3,
+    "imagem": "/assets/StarWars/SWp3.png",
+    "nome": "produto3",
+    "preco": "100",
+    "categoria": "StarWars"
+  },
+  {
+    "id": 4,
+    "imagem": "/assets/StarWars/SWp4.png",
+    "nome": "produto4",
+    "preco": "100",
+    "categoria": "StarWars"
+  },
+  {
+    "id": 5,
+    "imagem": "/assets/StarWars/SWp5.png",
+    "nome": "produto5",
+    "preco": "100",
+    "categoria": "StarWars"
+  },
+  {
+    "id": 6,
+    "imagem": "/assets/StarWars/SWp6.png",
+    "nome": "produto6",
+    "preco": "100",
+    "categoria": "StarWars"
+  },
+  {
+    "id": 7,
     "imagem": "/assets/Consoles/Cp1.png",
-    "nome": "p1",
+    "nome": "console1",
+    "preco": "100",
+    "categoria": "Consoles"
+  },
+  {
+    "id": 8,
+    "imagem": "/assets/Consoles/Cp2.png",
+    "nome": "console2",
+    "preco": "100",
+    "categoria": "Consoles"
+  },
+  {
+    "id": 9,
+    "imagem": "/assets/Consoles/Cp3.png",
+    "nome": "console3",
+    "preco": "100",
+    "categoria": "Consoles"
+  },
+  {
+    "id": 10,
+    "imagem": "/assets/Consoles/Cp4.png",
+    "nome": "console4",
+    "preco": "100",
+    "categoria": "Consoles"
+  },
+  {
+    "id": 11,
+    "imagem": "/assets/Consoles/Cp5.png",
+    "nome": "console5",
+    "preco": "100",
+    "categoria": "Consoles"
+  },
+  {
+    "id": 12,
+    "imagem": "/assets/Consoles/Cp6.png",
+    "nome": "console6",
+    "preco": "100",
+    "categoria": "Consoles"
+  },
+
+  {
+    "id": 13,
+    "imagem": "/assets/Diversos/Dp1.png",
+    "nome": "diversos1",
     "preco": "30",
-    "categoria": "Console"
+    "categoria": "Diversos"
+  },
+  {
+    "id": 14,
+    "imagem": "/assets/Diversos/Dp2.png",
+    "nome": "diversos2",
+    "preco": "30",
+    "categoria": "Diversos"
+  },
+  {
+    "id": 15,
+    "imagem": "/assets/Diversos/Dp3.png",
+    "nome": "diversos3",
+    "preco": "30",
+    "categoria": "Diversos"
+  },
+  {
+    "id": 16,
+    "imagem": "/assets/Diversos/Dp4.png",
+    "nome": "diversos4",
+    "preco": "30",
+    "categoria": "Diversos"
+  },
+  {
+    "id": 17,
+    "imagem": "/assets/Diversos/Dp5.png",
+    "nome": "diversos5",
+    "preco": "30",
+    "categoria": "Diversos"
+  },
+  {
+    "id": 18,
+    "imagem": "/assets/Diversos/Dp6.png",
+    "nome": "diversos6",
+    "preco": "30",
+    "categoria": "Diversos"
   }
 ]

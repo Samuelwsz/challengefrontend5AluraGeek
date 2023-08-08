@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import Botao from "../../components/Botao"
+import { Link } from "react-router-dom"
 
 const AreaInputs = styled.div`
   display: flex;
@@ -44,6 +45,8 @@ export default function AddProduto() {
     <>
       <div style={{ background: "#f5f5f5" }}>
         <AreaInputs>
+          <Link to="/produtos">Area administrativa</Link>
+
           <TituloEstilizado>Adicionar novo produto</TituloEstilizado>
           <InputEstilizado type="text" placeholder="URL da imagem" />
           <InputEstilizado type="text" placeholder="Categoria" />

@@ -6,7 +6,7 @@ const CardEstilizado = styled.div`
   flex-direction: column;
   align-items: left;
   padding: 20px;
-  border-radius: 8px;
+  font-size: 18px;
 `
 
 const ImgEstilizado = styled.img`
@@ -42,7 +42,7 @@ export default function Card({ imagem, produto, preco }: CardProps) {
           <ImgEstilizado src={imagem} alt="" />
           <ParagrafoEstilizado>{produto}</ParagrafoEstilizado>
           <ParagrafoEstilizado style={{ fontWeight: "bold" }}>
-            {preco}
+            R$: {preco},00
           </ParagrafoEstilizado>
           <LinkEstilizado href="">Ver produto</LinkEstilizado>
         </CardEstilizado>
