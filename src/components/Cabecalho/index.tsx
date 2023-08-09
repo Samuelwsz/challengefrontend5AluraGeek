@@ -5,17 +5,16 @@ import logo from "../../assets/LogoAluraGeek.svg"
 import Botao from "../Botao"
 import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { useSearch } from "../../context/InputFuncional"
 
 const Header = styled.header`
   color: white;
   overflow-x: hidden;
   padding: 10px;
 `
-
 const SearchContainer = styled.div`
   position: relative;
 `
-
 const SearchInput = styled.input`
   width: 100%;
   padding: 10px;
@@ -26,21 +25,25 @@ const SearchInput = styled.input`
   border-radius: 30px;
   background: #f5f5f5;
 `
-
 const SearchIcon = styled.div`
   position: absolute;
   top: 50%;
   right: 5px;
   transform: translateY(-50%);
   color: #aaa;
+  cursor: pointer;
 `
-
 const AreaBotao = styled.div`
   display: flex;
   justify-content: flex-end;
 `
 
 export default function Cabecalho() {
+  const { searchTerm, setSearchTerm } = useSearch()
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value)
+  }
   const [showLoginButton, setShowLoginButton] = useState(true)
   const location = useLocation()
 
@@ -71,6 +74,8 @@ export default function Cabecalho() {
                 <SearchInput
                   type="text"
                   placeholder="O que deseja encontrar?"
+                  value={searchTerm}
+                  onChange={handleSearchChange}
                 />
                 <SearchIcon>
                   <FiSearch />

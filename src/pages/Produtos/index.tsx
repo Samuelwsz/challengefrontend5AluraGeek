@@ -5,8 +5,7 @@ import { Link } from "react-router-dom"
 import Card from "../../components/Card"
 
 import produtos from "../../json/produtos.json"
-
-import img from "../../assets/Consoles/Cp1.png"
+import { useSearch } from "../../context/InputFuncional"
 
 const DivEstilizada = styled.div`
   display: flex;
@@ -15,6 +14,12 @@ const DivEstilizada = styled.div`
 `
 
 export default function Produtos() {
+  const { searchTerm } = useSearch()
+
+  const filteredProdutos = produtos.filter((produto) =>
+    produto.nome.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
   return (
     <>
       <Container>
@@ -25,7 +30,7 @@ export default function Produtos() {
           </Link>
         </DivEstilizada>
         <Row>
-          {produtos.map((produto) => {
+          {filteredProdutos.map((produto) => {
             return (
               <Card
                 key={produto.id}
