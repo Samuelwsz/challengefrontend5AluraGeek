@@ -3,7 +3,7 @@ import Botao from "../../components/Botao"
 import { Link } from "react-router-dom"
 import { AiOutlineArrowLeft } from "react-icons/ai"
 
-const AreaInputs = styled.div`
+const AreaForm = styled.form`
   display: flex;
   flex-direction: column;
   padding: 50px 0;
@@ -38,24 +38,23 @@ const TituloEstilizado = styled.h2`
   font-size: 30px;
 `
 const LinkEstilizado = styled(Link)`
-  margin-bottom: 20px;
-  text-decoration: none;
-  text-align: left;
-  font-size: 23px;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  text-decoration: none;
+  padding-top: 30px;
+  font-size: 23px;
 `
 
 export default function AddProduto() {
   return (
     <>
       <div style={{ background: "#f5f5f5" }}>
-        <AreaInputs>
-          <LinkEstilizado to="/login">
-            <AiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
-            Area administrativa
-          </LinkEstilizado>
-
+        <LinkEstilizado to="/login">
+          <AiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
+          Area administrativa
+        </LinkEstilizado>
+        <AreaForm>
           <TituloEstilizado>Adicionar novo produto</TituloEstilizado>
           <InputEstilizado type="text" placeholder="URL da imagem" />
           <InputEstilizado type="text" placeholder="Categoria" />
@@ -63,7 +62,7 @@ export default function AddProduto() {
           <InputEstilizado type="text" placeholder="Preço do produto" />
           <TextAreaEstilizado placeholder="Descrição do produto" />
           <Botao variante="secundaria" titulo="Adicionar produto" />
-        </AreaInputs>
+        </AreaForm>
       </div>
     </>
   )
