@@ -1,16 +1,16 @@
 import styled from "@emotion/styled"
 import Botao from "../../components/Botao"
 import { Link } from "react-router-dom"
+import { AiOutlineArrowLeft } from "react-icons/ai"
 
 const AreaInputs = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 85px 0;
+  padding: 50px 0;
   text-align: center;
   margin: auto;
   width: 50%;
 `
-
 const InputEstilizado = styled.input`
   margin-bottom: 20px;
   padding: 16px;
@@ -19,7 +19,6 @@ const InputEstilizado = styled.input`
   color: #464646;
   outline: none;
 `
-
 const TextAreaEstilizado = styled.textarea`
   margin-bottom: 10px;
 
@@ -33,11 +32,18 @@ const TextAreaEstilizado = styled.textarea`
     color: #aaa;
   }
 `
-
 const TituloEstilizado = styled.h2`
   margin-bottom: 30px;
   text-align: left;
   font-size: 30px;
+`
+const LinkEstilizado = styled(Link)`
+  margin-bottom: 20px;
+  text-decoration: none;
+  text-align: left;
+  font-size: 23px;
+  display: inline-flex;
+  align-items: center;
 `
 
 export default function AddProduto() {
@@ -45,7 +51,10 @@ export default function AddProduto() {
     <>
       <div style={{ background: "#f5f5f5" }}>
         <AreaInputs>
-          <Link to="/login">Area administrativa</Link>
+          <LinkEstilizado to="/login">
+            <AiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
+            Area administrativa
+          </LinkEstilizado>
 
           <TituloEstilizado>Adicionar novo produto</TituloEstilizado>
           <InputEstilizado type="text" placeholder="URL da imagem" />

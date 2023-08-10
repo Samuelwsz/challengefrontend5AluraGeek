@@ -3,6 +3,7 @@ import Botao from "../Botao"
 
 import ImgBanner from "./assets/banner-image.png"
 import ImgBannerTablet from "./assets/bannerResponsivo.jpg"
+import { Link } from "react-router-dom"
 
 const BannerContainer = styled.div`
   position: relative;
@@ -47,7 +48,9 @@ export default function Banner() {
           <p style={{ marginBottom: "10px" }}>
             Produtos selecionados com 33% de desconto
           </p>
-          <Botao variante="secundaria" titulo="Ver Consoles" />
+          <Link to="/produtos" style={{ textDecoration: "none" }}>
+            <Botao variante="secundaria" titulo="Ver Produtos" />
+          </Link>
         </BannerText>
       </BannerContainer>
     </>

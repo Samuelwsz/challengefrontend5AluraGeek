@@ -27,7 +27,10 @@ export default function Login() {
           <h2 style={{ marginBottom: "30px" }}>Iniciar Sessão</h2>
           <InputEstilizado type="email" placeholder="Escreva seu email" />
           <InputEstilizado type="password" placeholder="Escreva sua senha" />
-          <Link to="/addproduto">
+          <Link
+            to="/addproduto"
+            style={{ margin: "auto", textDecoration: "none" }}
+          >
             <Botao variante="secundaria" titulo="Entrar" />
           </Link>
         </AreaInputs>

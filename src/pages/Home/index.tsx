@@ -3,7 +3,6 @@ import styled from "@emotion/styled"
 import Banner from "../../components/Banner"
 import Card from "../../components/Card"
 import { AiOutlineArrowRight } from "react-icons/ai"
-
 import produtos from "../../json/produtos.json"
 import { useSearch } from "../../context/InputFuncional"
 import { Link } from "react-router-dom"
