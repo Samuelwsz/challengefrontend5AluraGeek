@@ -7,13 +7,12 @@ import { SearchProvider } from "../../context/InputFuncional"
 export default function PagePadrao() {
   return (
     <>
-     
+      <SearchProvider>
         <Cabecalho />
-
         <Outlet />
         <FaleConosco />
         <Rodape />
-      
+      </SearchProvider>
     </>
   )
 }

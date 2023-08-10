@@ -7,6 +7,8 @@ import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useSearch } from "../../context/InputFuncional"
 
+import produtos from "../../json/produtos.json"
+
 const Header = styled.header`
   color: white;
   overflow-x: hidden;
@@ -44,6 +46,7 @@ export default function Cabecalho() {
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value)
   }
+
   const [showLoginButton, setShowLoginButton] = useState(true)
   const location = useLocation()
 
@@ -92,7 +95,6 @@ export default function Cabecalho() {
               )}
             </Col>
           </Row>
-          <Row></Row>
         </Container>
       </Header>
     </>

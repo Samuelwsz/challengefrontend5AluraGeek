@@ -3,7 +3,6 @@ import styled from "@emotion/styled"
 import Banner from "../../components/Banner"
 import Card from "../../components/Card"
 import { AiOutlineArrowRight } from "react-icons/ai"
-import { useSearchContext } from "../../context/InputFuncional"
 
 import produtos from "../../json/produtos.json"
 
@@ -32,7 +31,6 @@ export default function Home() {
   const diversosProdutos = produtos.filter(
     (produto) => produto.categoria === "Diversos"
   )
-
 
   return (
     <>

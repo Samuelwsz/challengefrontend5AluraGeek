@@ -30,16 +30,14 @@ export default function Produtos() {
           </Link>
         </DivEstilizada>
         <Row>
-          {filteredProdutos.map((produto) => {
-            return (
-              <Card
-                key={produto.id}
-                imagem={produto.imagem}
-                produto={produto.nome}
-                preco={produto.preco}
-              />
-            )
-          })}
+          {filteredProdutos.map((produto) => (
+            <Card
+              key={produto.id}
+              imagem={produto.imagem}
+              produto={produto.nome}
+              preco={produto.preco}
+            />
+          ))}
         </Row>
       </Container>
     </>

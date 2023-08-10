@@ -9,27 +9,19 @@ import { SearchProvider } from "../context/InputFuncional"
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <SearchProvider>
-        <PagePadrao />
-      </SearchProvider>
-    ),
+    element: <PagePadrao />,
     children: [
       {
         path: "/",
-        element: (
-          <SearchProvider>
-            <Home />
-          </SearchProvider>
-        ),
+        element: <Home />,
       },
       { path: "/login", element: <Login /> },
       {
         path: "/produtos",
         element: (
-          <SearchProvider>
+          
             <Produtos />
-          </SearchProvider>
+         
         ),
       },
       { path: "/addproduto", element: <AddProduto /> },
