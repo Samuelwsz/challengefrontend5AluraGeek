@@ -45,7 +45,7 @@ export default function AddProduto() {
     <>
       <div style={{ background: "#f5f5f5" }}>
         <AreaInputs>
-          <Link to="/produtos">Area administrativa</Link>
+          <Link to="/login">Area administrativa</Link>
 
           <TituloEstilizado>Adicionar novo produto</TituloEstilizado>
           <InputEstilizado type="text" placeholder="URL da imagem" />

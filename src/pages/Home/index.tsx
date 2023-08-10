@@ -5,6 +5,8 @@ import Card from "../../components/Card"
 import { AiOutlineArrowRight } from "react-icons/ai"
 
 import produtos from "../../json/produtos.json"
+import { useSearch } from "../../context/InputFuncional"
+import { Link } from "react-router-dom"
 
 const DivEstilizada = styled.div`
   display: flex;
@@ -17,6 +19,10 @@ const H2Estilizado = styled.h2`
   font-size: 18px;
   color: #2a7ae4;
   margin-top: 8px;
+`
+const ParagrafoInputError = styled.p`
+  padding: 30px;
+  font-size: 30px;
 `
 
 export default function Home() {
@@ -32,63 +38,98 @@ export default function Home() {
     (produto) => produto.categoria === "Diversos"
   )
 
+  const { searchTerm } = useSearch()
+
+  const starwarsInput = starWarsProdutos.filter(
+    (produto) =>
+      produto.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      produto.preco.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  const consoleInput = consoleProdutos.filter(
+    (produto) =>
+      produto.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      produto.preco.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  const diversosInput = diversosProdutos.filter(
+    (produto) =>
+      produto.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      produto.preco.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
   return (
     <>
       <Banner />
       <Container>
         <DivEstilizada>
           <h2>Star wars</h2>
-          <H2Estilizado>
-            Ver tudo <AiOutlineArrowRight style={{ verticalAlign: "middle" }} />
-          </H2Estilizado>
+          <Link to="/produtos" style={{ textDecoration: "none" }}>
+            <H2Estilizado>
+              Ver tudo
+              <AiOutlineArrowRight style={{ verticalAlign: "middle" }} />
+            </H2Estilizado>
+          </Link>
         </DivEstilizada>
         <Row>
-          {starWarsProdutos.map((produto) => {
-            return (
+          {starwarsInput.length === 0 ? (
+            <ParagrafoInputError>Produto não encontrado.</ParagrafoInputError>
+          ) : (
+            starwarsInput.map((produto) => (
               <Card
                 key={produto.id}
-                produto={produto.nome}
                 imagem={produto.imagem}
+                produto={produto.nome}
                 preco={produto.preco}
               />
-            )
-          })}
+            ))
+          )}
         </Row>
         <DivEstilizada>
           <h2>Consoles</h2>
-          <H2Estilizado>
-            Ver tudo <AiOutlineArrowRight style={{ verticalAlign: "middle" }} />
-          </H2Estilizado>
+          <Link to="/produtos" style={{ textDecoration: "none" }}>
+            <H2Estilizado>
+              Ver tudo
+              <AiOutlineArrowRight style={{ verticalAlign: "middle" }} />
+            </H2Estilizado>
+          </Link>
         </DivEstilizada>
         <Row>
-          {consoleProdutos.map((produto) => {
-            return (
+          {consoleInput.length === 0 ? (
+            <ParagrafoInputError>Produto não encontrado.</ParagrafoInputError>
+          ) : (
+            consoleInput.map((produto) => (
               <Card
                 key={produto.id}
                 imagem={produto.imagem}
-                preco={produto.preco}
                 produto={produto.nome}
+                preco={produto.preco}
               />
-            )
-          })}
+            ))
+          )}
         </Row>
         <DivEstilizada>
           <h2>Diversos</h2>
-          <H2Estilizado>
-            Ver tudo <AiOutlineArrowRight style={{ verticalAlign: "middle" }} />
-          </H2Estilizado>
+          <Link to="/produtos" style={{ textDecoration: "none" }}>
+            <H2Estilizado>
+              Ver tudo
+              <AiOutlineArrowRight style={{ verticalAlign: "middle" }} />
+            </H2Estilizado>
+          </Link>
         </DivEstilizada>
         <Row>
-          {diversosProdutos.map((produto) => {
-            return (
+          {diversosInput.length === 0 ? (
+            <ParagrafoInputError>Produto não encontrado.</ParagrafoInputError>
+          ) : (
+            diversosInput.map((produto) => (
               <Card
                 key={produto.id}
                 imagem={produto.imagem}
-                preco={produto.preco}
                 produto={produto.nome}
+                preco={produto.preco}
               />
-            )
-          })}
+            ))
+          )}
         </Row>
       </Container>
     </>

@@ -7,8 +7,6 @@ import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useSearch } from "../../context/InputFuncional"
 
-import produtos from "../../json/produtos.json"
-
 const Header = styled.header`
   color: white;
   overflow-x: hidden;
@@ -47,6 +45,12 @@ export default function Cabecalho() {
     setSearchTerm(event.target.value)
   }
 
+  const handleSearchSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+    // Aqui você pode realizar a lógica de pesquisa se necessário
+    setSearchTerm("") // Isso redefine o input após a pesquisa
+  }
+
   const [showLoginButton, setShowLoginButton] = useState(true)
   const location = useLocation()
 
@@ -73,17 +77,19 @@ export default function Cabecalho() {
               </Link>
             </Col>
             <Col xs={12} sm={12} md={4} lg={4}>
-              <SearchContainer>
-                <SearchInput
-                  type="text"
-                  placeholder="O que deseja encontrar?"
-                  value={searchTerm}
-                  onChange={handleSearchChange}
-                />
-                <SearchIcon>
-                  <FiSearch />
-                </SearchIcon>
-              </SearchContainer>
+              <form onSubmit={handleSearchSubmit}>
+                <SearchContainer>
+                  <SearchInput
+                    type="text"
+                    placeholder="O que deseja encontrar?"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                  />
+                  <SearchIcon onClick={handleSearchSubmit}>
+                    <FiSearch />
+                  </SearchIcon>
+                </SearchContainer>
+              </form>
             </Col>
             <Col xs={12} sm={12} md={4} lg={4}>
               {showLoginButton && (

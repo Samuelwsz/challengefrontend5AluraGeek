@@ -12,12 +12,18 @@ const DivEstilizada = styled.div`
   justify-content: space-between;
   margin: 20px;
 `
+const ParagrafoInputError = styled.p`
+  padding: 30px;
+  font-size: 30px;
+`
 
 export default function Produtos() {
   const { searchTerm } = useSearch()
 
-  const filteredProdutos = produtos.filter((produto) =>
-    produto.nome.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProdutos = produtos.filter(
+    (produto) =>
+      produto.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      produto.preco.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
@@ -30,14 +36,18 @@ export default function Produtos() {
           </Link>
         </DivEstilizada>
         <Row>
-          {filteredProdutos.map((produto) => (
-            <Card
-              key={produto.id}
-              imagem={produto.imagem}
-              produto={produto.nome}
-              preco={produto.preco}
-            />
-          ))}
+          {filteredProdutos.length === 0 ? (
+            <ParagrafoInputError>Produto não encontrado.</ParagrafoInputError>
+          ) : (
+            filteredProdutos.map((produto) => (
+              <Card
+                key={produto.id}
+                imagem={produto.imagem}
+                produto={produto.nome}
+                preco={produto.preco}
+              />
+            ))
+          )}
         </Row>
       </Container>
     </>

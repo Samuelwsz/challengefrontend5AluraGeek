@@ -10,7 +10,6 @@ const AreaInputs = styled.div`
   margin: auto;
   width: 50%;
 `
-
 const InputEstilizado = styled.input`
   margin-bottom: 20px;
   padding: 16px;
@@ -28,7 +27,7 @@ export default function Login() {
           <h2 style={{ marginBottom: "30px" }}>Iniciar Sessão</h2>
           <InputEstilizado type="email" placeholder="Escreva seu email" />
           <InputEstilizado type="password" placeholder="Escreva sua senha" />
-          <Link to="/produtos">
+          <Link to="/addproduto">
             <Botao variante="secundaria" titulo="Entrar" />
           </Link>
         </AreaInputs>
