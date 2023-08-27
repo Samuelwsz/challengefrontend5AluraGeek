@@ -47,8 +47,8 @@ export default function Cabecalho() {
 
   const handleSearchSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    // Aqui você pode realizar a lógica de pesquisa se necessário
-    setSearchTerm("") // Isso redefine o input após a pesquisa
+
+    setSearchTerm("")
   }
 
   const [showLoginButton, setShowLoginButton] = useState(true)

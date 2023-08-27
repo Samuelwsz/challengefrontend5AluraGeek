@@ -2,6 +2,8 @@ import styled from "@emotion/styled"
 import Botao from "../../components/Botao"
 import { Link } from "react-router-dom"
 import { AiOutlineArrowLeft } from "react-icons/ai"
+import { useState } from "react"
+import produtosJson from "../../json/produtos.json"
 
 const AreaForm = styled.form`
   display: flex;
@@ -19,19 +21,6 @@ const InputEstilizado = styled.input`
   color: #464646;
   outline: none;
 `
-const TextAreaEstilizado = styled.textarea`
-  margin-bottom: 10px;
-
-  width: 100%;
-  padding: 10px;
-  border: none;
-  font-size: 16px;
-  color: #464646;
-  outline: none;
-  ::placeholder {
-    color: #aaa;
-  }
-`
 const TituloEstilizado = styled.h2`
   margin-bottom: 30px;
   text-align: left;
@@ -46,7 +35,39 @@ const LinkEstilizado = styled(Link)`
   font-size: 23px;
 `
 
+interface ProdutoProps {
+  id: number
+  imagem: string
+  nome: string
+  preco: string
+  categoria: string
+}
+
 export default function AddProduto() {
+  const [novoProduto, setNovoProduto] = useState<ProdutoProps>({
+    id: 0,
+    imagem: "",
+    categoria: "",
+    nome: "",
+    preco: "",
+  })
+
+  const [listaProdutos, setListaProdutos] =
+    useState<ProdutoProps[]>(produtosJson)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const { id, ...rest } = novoProduto
+
+    const novoProdutoObj: ProdutoProps = {
+      id: listaProdutos.length + 1,
+      ...rest,
+    }
+
+    setListaProdutos([...listaProdutos, novoProdutoObj])
+  }
+
   return (
     <>
       <div style={{ background: "#f5f5f5" }}>
@@ -54,16 +75,47 @@ export default function AddProduto() {
           <AiOutlineArrowLeft style={{ verticalAlign: "middle" }} />
           Area administrativa
         </LinkEstilizado>
-        <AreaForm>
+        <AreaForm onSubmit={handleSubmit}>
           <TituloEstilizado>Adicionar novo produto</TituloEstilizado>
-          <InputEstilizado type="text" placeholder="URL da imagem" />
-          <InputEstilizado type="text" placeholder="Categoria" />
-          <InputEstilizado type="text" placeholder="Nome do produto" />
-          <InputEstilizado type="text" placeholder="Preço do produto" />
-          <TextAreaEstilizado placeholder="Descrição do produto" />
+          <InputEstilizado
+            type="text"
+            placeholder="URL da imagem"
+            value={novoProduto.imagem}
+            onChange={(e) =>
+              setNovoProduto({ ...novoProduto, imagem: e.target.value })
+            }
+          />
+          <InputEstilizado
+            type="text"
+            placeholder="Categoria"
+            value={novoProduto.categoria}
+            onChange={(e) =>
+              setNovoProduto({ ...novoProduto, categoria: e.target.value })
+            }
+          />
+          <InputEstilizado
+            type="text"
+            placeholder="Nome do produto"
+            value={novoProduto.nome}
+            onChange={(e) =>
+              setNovoProduto({ ...novoProduto, nome: e.target.value })
+            }
+          />
+          <InputEstilizado
+            type="text"
+            placeholder="Preço do produto"
+            value={novoProduto.preco}
+            onChange={(e) =>
+              setNovoProduto({ ...novoProduto, preco: e.target.value })
+            }
+          />
           <Botao variante="secundaria" titulo="Adicionar produto" />
         </AreaForm>
       </div>
     </>
   )
+}
+
+{
+  /*    <TextAreaEstilizado placeholder="Descrição do produto" />*/
 }

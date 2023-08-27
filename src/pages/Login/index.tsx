@@ -1,8 +1,9 @@
 import styled from "@emotion/styled"
 import Botao from "../../components/Botao"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
-const AreaInputs = styled.div`
+const AreaInputs = styled.form`
   display: flex;
   flex-direction: column;
   padding: 85px 0;
@@ -20,19 +21,43 @@ const InputEstilizado = styled.input`
 `
 
 export default function Login() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState(false)
+
+  const navigate = useNavigate()
+
+  const handleLogin = () => {
+    if (email === "u" && password === "1") {
+      setError(false)
+      /* setLoggedIn(true)*/
+      navigate("/addproduto")
+      console.log("logou")
+    } else {
+      setError(true)
+    }
+  }
+
+
   return (
     <>
       <div style={{ background: "#f5f5f5" }}>
         <AreaInputs>
           <h2 style={{ marginBottom: "30px" }}>Iniciar Sessão</h2>
-          <InputEstilizado type="email" placeholder="Escreva seu email" />
-          <InputEstilizado type="password" placeholder="Escreva sua senha" />
-          <Link
-            to="/addproduto"
-            style={{ margin: "auto", textDecoration: "none" }}
-          >
-            <Botao variante="secundaria" titulo="Entrar" />
-          </Link>
+          <InputEstilizado
+            type="email"
+            placeholder="Escreva seu email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <InputEstilizado
+            type="password"
+            placeholder="Escreva sua senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {error && <p style={{ color: "red" }}>Credenciais incorretas</p>}
+          <Botao variante="secundaria" titulo="Entrar" onClick={handleLogin} />
         </AreaInputs>
       </div>
     </>

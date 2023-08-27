@@ -4,7 +4,6 @@ import PagePadrao from "../pages/PaginaPadrao"
 import Login from "../pages/Login"
 import Produtos from "../pages/Produtos"
 import AddProduto from "../pages/AdicionarProduto"
-import { SearchProvider } from "../context/InputFuncional"
 
 export const router = createBrowserRouter([
   {
@@ -15,12 +14,18 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      { path: "/login", element: <Login /> },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/addproduto",
+        element: <AddProduto />,
+      },
       {
         path: "/produtos",
         element: <Produtos />,
       },
-      { path: "/addproduto", element: <AddProduto /> },
     ],
   },
 ])

@@ -28,21 +28,27 @@ interface BotaoProps {
   titulo: string
   variante?: string
   tipo?: "button" | "submit" | "reset"
+  onClick?: () => void
 }
 
 export default function Botao({
   titulo,
   tipo = "button",
   variante = "primaria",
+  onClick,
 }: BotaoProps) {
   if (variante === "primaria") {
     return (
       <>
-        <BotaoEstilizado type={tipo}>{titulo}</BotaoEstilizado>
+        <BotaoEstilizado type={tipo} onClick={onClick}>
+          {titulo}
+        </BotaoEstilizado>
       </>
     )
   }
   return (
-    <BotaoEstilizadoSecundario type={tipo}>{titulo}</BotaoEstilizadoSecundario>
+    <BotaoEstilizadoSecundario type={tipo} onClick={onClick}>
+      {titulo}
+    </BotaoEstilizadoSecundario>
   )
 }

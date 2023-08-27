@@ -10,7 +10,7 @@ const SearchContext = createContext<SearchContextData | undefined>(undefined)
 export function useSearch() {
   const context = useContext(SearchContext)
   if (!context) {
-    throw new Error("useSearch must be used within a SearchProvider")
+    throw new Error("error")
   }
   return context
 }
