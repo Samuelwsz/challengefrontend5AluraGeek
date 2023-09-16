@@ -95,7 +95,7 @@ export default function Home() {
         </DivEstilizada>
         <Row>
           {consoleInput.length === 0 ? (
-            <ParagrafoInputError>Produto não encontrado.</ParagrafoInputError>
+            <ParagrafoInputError>Console não encontrado.</ParagrafoInputError>
           ) : (
             consoleInput.map((produto) => (
               <Card
@@ -118,7 +118,7 @@ export default function Home() {
         </DivEstilizada>
         <Row>
           {diversosInput.length === 0 ? (
-            <ParagrafoInputError>Produto não encontrado.</ParagrafoInputError>
+            <ParagrafoInputError>Diverso não encontrado.</ParagrafoInputError>
           ) : (
             diversosInput.map((produto) => (
               <Card
