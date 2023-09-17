@@ -31,8 +31,7 @@ interface Product {
   nome: string
   preco: string
   imagem: string
-  resumo?: string
-  // Adicione outras propriedades do produto conforme necessário
+  resumo: string
 }
 
 export default function Home() {

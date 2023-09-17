@@ -3,7 +3,7 @@
     "id": 1,
     "imagem": "/assets/StarWars/SWp1.png",
     "nome": "produto1",
-    "preco": "50",
+    "preco": "50,00",
     "categoria": "StarWars",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "imagem": "/assets/StarWars/SWp2.png",
     "nome": "produto2",
-    "preco": "100",
+    "preco": "99,99",
     "categoria": "StarWars",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "imagem": "/assets/StarWars/SWp3.png",
     "nome": "produto3",
-    "preco": "100",
+    "preco": "100,00",
     "categoria": "StarWars",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "imagem": "/assets/StarWars/SWp4.png",
     "nome": "produto4",
-    "preco": "100",
+    "preco": "80,50",
     "categoria": "StarWars",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "imagem": "/assets/StarWars/SWp5.png",
     "nome": "produto5",
-    "preco": "100",
+    "preco": "20,99",
     "categoria": "StarWars",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "imagem": "/assets/StarWars/SWp6.png",
     "nome": "produto6",
-    "preco": "100",
+    "preco": "200,00",
     "categoria": "StarWars",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "imagem": "/assets/Consoles/Cp1.png",
     "nome": "console1",
-    "preco": "100",
+    "preco": "150,00",
     "categoria": "Consoles",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "imagem": "/assets/Consoles/Cp2.png",
     "nome": "console2",
-    "preco": "100",
+    "preco": "60,60",
     "categoria": "Consoles",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -67,7 +67,7 @@
     "id": 9,
     "imagem": "/assets/Consoles/Cp3.png",
     "nome": "console3",
-    "preco": "100",
+    "preco": "400,00",
     "categoria": "Consoles",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -75,7 +75,7 @@
     "id": 10,
     "imagem": "/assets/Consoles/Cp4.png",
     "nome": "console4",
-    "preco": "100",
+    "preco": "350,00",
     "categoria": "Consoles",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -83,7 +83,7 @@
     "id": 11,
     "imagem": "/assets/Consoles/Cp5.png",
     "nome": "console5",
-    "preco": "100",
+    "preco": "120,00",
     "categoria": "Consoles",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -91,7 +91,7 @@
     "id": 12,
     "imagem": "/assets/Consoles/Cp6.png",
     "nome": "console6",
-    "preco": "100",
+    "preco": "100,00",
     "categoria": "Consoles",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -100,7 +100,7 @@
     "id": 13,
     "imagem": "/assets/Diversos/Dp1.png",
     "nome": "diversos1",
-    "preco": "30",
+    "preco": "30,00",
     "categoria": "Diversos",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -108,7 +108,7 @@
     "id": 14,
     "imagem": "/assets/Diversos/Dp2.png",
     "nome": "diversos2",
-    "preco": "30",
+    "preco": "30,99",
     "categoria": "Diversos",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -116,7 +116,7 @@
     "id": 15,
     "imagem": "/assets/Diversos/Dp3.png",
     "nome": "diversos3",
-    "preco": "30",
+    "preco": "30,40",
     "categoria": "Diversos",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -124,7 +124,7 @@
     "id": 16,
     "imagem": "/assets/Diversos/Dp4.png",
     "nome": "diversos4",
-    "preco": "30",
+    "preco": "30,00",
     "categoria": "Diversos",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -132,7 +132,7 @@
     "id": 17,
     "imagem": "/assets/Diversos/Dp5.png",
     "nome": "diversos5",
-    "preco": "30",
+    "preco": "30,40",
     "categoria": "Diversos",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   },
@@ -140,7 +140,7 @@
     "id": 18,
     "imagem": "/assets/Diversos/Dp6.png",
     "nome": "diversos6",
-    "preco": "30",
+    "preco": "100,50",
     "categoria": "Diversos",
     "resumo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi sapiente aliquam rem! Ratione delectus dignissimos consequatur autem voluptatem fuga reiciendis reprehenderit? Natus sunt laborum voluptatem incidunt nam minima earum aliquid."
   }

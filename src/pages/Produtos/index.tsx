@@ -6,6 +6,8 @@ import Card from "../../components/Card"
 
 import produtos from "../../json/produtos.json"
 import { useSearch } from "../../context/InputFuncional"
+import { useState } from "react"
+import ModalCardProduto from "../../components/Modal"
 
 const DivEstilizada = styled.div`
   display: flex;
@@ -17,7 +19,29 @@ const ParagrafoInputError = styled.p`
   font-size: 30px;
 `
 
+interface Product {
+  id: number
+  nome: string
+  preco: string
+  imagem: string
+  resumo: string
+  // Adicione outras propriedades do produto conforme necessário
+}
+
 export default function Produtos() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+
+  const handleProductSelection = (produto: Product) => {
+    setSelectedProduct(produto)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setSelectedProduct(null)
+    setIsModalOpen(false)
+  }
+
   const { searchTerm } = useSearch()
 
   const filteredProdutos = produtos.filter(
@@ -31,9 +55,9 @@ export default function Produtos() {
       <Container>
         <DivEstilizada>
           <h2>Todos os produtos</h2>
-          <Link to="/addproduto" style={{ textDecoration: "none" }}>
+          {/*  <Link to="/addproduto" style={{ textDecoration: "none" }}>
             <Botao variante="secundaria" titulo="Adicionar produto" />
-          </Link>
+          </Link>*/}
         </DivEstilizada>
         <Row>
           {filteredProdutos.length === 0 ? (
@@ -45,11 +69,18 @@ export default function Produtos() {
                 imagem={produto.imagem}
                 produto={produto.nome}
                 preco={produto.preco}
+                onClick={() => handleProductSelection(produto)}
               />
             ))
           )}
         </Row>
       </Container>
+
+      <ModalCardProduto
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        selectedProduct={selectedProduct}
+      />
     </>
   )
 }

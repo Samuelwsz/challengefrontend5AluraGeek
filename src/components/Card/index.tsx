@@ -19,10 +19,10 @@ const ParagrafoEstilizado = styled.p`
   height: auto;
   margin-bottom: 10px;
 `
-
 const LinkEstilizado = styled.a`
   color: #007bff;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
@@ -43,7 +43,7 @@ export default function Card({ imagem, produto, preco, onClick }: CardProps) {
           <ImgEstilizado src={imagem} alt="" />
           <ParagrafoEstilizado>{produto}</ParagrafoEstilizado>
           <ParagrafoEstilizado style={{ fontWeight: "bold" }}>
-            R$: {preco},00
+            R$: {preco}
           </ParagrafoEstilizado>
           <LinkEstilizado onClick={onClick}>Ver produto</LinkEstilizado>
         </CardEstilizado>

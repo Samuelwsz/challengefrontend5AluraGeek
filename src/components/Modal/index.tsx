@@ -12,10 +12,12 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
   z-index: 1;
 `
 
 const DivModal = styled.div`
+  border-radius: 20px;
   padding: 15px;
   position: relative;
   background-color: white;
@@ -28,6 +30,7 @@ const DivModal = styled.div`
   .image-column {
     flex: 1; /* A coluna da imagem ocupa 1 unidade de flex */
     padding-right: 20px; /* Espaçamento à direita */
+    
   }
 
   /* Estilos para a coluna direita (texto) */
@@ -58,7 +61,7 @@ interface ModalCardProdutoProps {
     nome: string
     preco: string
     imagem: string
-    resumo?: string
+    resumo: string
   } | null
 }
 
@@ -77,11 +80,11 @@ export default function ModalCardProduto({
             <CloseIcon />
           </CloseButton>
           <div className="image-column">
-            <img src={selectedProduct.imagem} alt="" />
+            <img style={{borderRadius:'10px'}} src={selectedProduct.imagem} alt="" />
           </div>
           <div className="text-column">
             <h2>{selectedProduct.nome}</h2>
-            <p>R$: {selectedProduct.preco},00</p>
+            <p>R$: {selectedProduct.preco}</p>
             <p style={{ marginTop: "10px" }}>{selectedProduct.resumo}</p>
           </div>
         </DivModal>
