@@ -32,9 +32,10 @@ interface CardProps {
   imagem: string
   produto: string
   preco: string
+  onClick?: () => void
 }
 
-export default function Card({ imagem, produto, preco }: CardProps) {
+export default function Card({ imagem, produto, preco, onClick }: CardProps) {
   return (
     <>
       <Col xs={12} sm={6} md={6} lg={4} xl={4} xxl={2}>
@@ -44,7 +45,7 @@ export default function Card({ imagem, produto, preco }: CardProps) {
           <ParagrafoEstilizado style={{ fontWeight: "bold" }}>
             R$: {preco},00
           </ParagrafoEstilizado>
-          <LinkEstilizado href="">Ver produto</LinkEstilizado>
+          <LinkEstilizado onClick={onClick}>Ver produto</LinkEstilizado>
         </CardEstilizado>
       </Col>
     </>

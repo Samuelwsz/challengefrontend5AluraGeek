@@ -1,8 +1,15 @@
-import { createContext, useContext, useState } from "react"
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from "react"
 
 interface SearchContextData {
   searchTerm: string
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>
+  setSearchTerm: Dispatch<SetStateAction<string>>
 }
 
 const SearchContext = createContext<SearchContextData | undefined>(undefined)
@@ -15,7 +22,7 @@ export function useSearch() {
   return context
 }
 
-export function SearchProvider({ children }: { children: React.ReactNode }) {
+export function SearchProvider({ children }: { children: ReactNode }) {
   const [searchTerm, setSearchTerm] = useState("")
 
   return (

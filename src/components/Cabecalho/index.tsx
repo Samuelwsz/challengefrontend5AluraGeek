@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi"
 import logo from "../../assets/LogoAluraGeek.svg"
 import Botao from "../Botao"
 import { Link, useLocation } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { ChangeEvent, FormEvent, useEffect, useState } from "react"
 import { useSearch } from "../../context/InputFuncional"
 
 const Header = styled.header`
@@ -41,11 +41,11 @@ const AreaBotao = styled.div`
 export default function Cabecalho() {
   const { searchTerm, setSearchTerm } = useSearch()
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value)
   }
 
-  const handleSearchSubmit = (event: React.FormEvent) => {
+  const handleSearchSubmit = (event: FormEvent) => {
     event.preventDefault()
 
     setSearchTerm("")

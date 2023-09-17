@@ -6,6 +6,8 @@ import { AiOutlineArrowRight } from "react-icons/ai"
 import produtos from "../../json/produtos.json"
 import { useSearch } from "../../context/InputFuncional"
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import ModalCardProduto from "../../components/Modal"
 
 const DivEstilizada = styled.div`
   display: flex;
@@ -24,7 +26,29 @@ const ParagrafoInputError = styled.p`
   font-size: 30px;
 `
 
+interface Product {
+  id: number
+  nome: string
+  preco: string
+  imagem: string
+  resumo?: string
+  // Adicione outras propriedades do produto conforme necessário
+}
+
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+
+  const handleProductSelection = (produto: Product) => {
+    setSelectedProduct(produto)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setSelectedProduct(null)
+    setIsModalOpen(false)
+  }
+
   const starWarsProdutos = produtos.filter(
     (produto) => produto.categoria === "StarWars"
   )
@@ -80,6 +104,7 @@ export default function Home() {
                 imagem={produto.imagem}
                 produto={produto.nome}
                 preco={produto.preco}
+                onClick={() => handleProductSelection(produto)}
               />
             ))
           )}
@@ -103,6 +128,7 @@ export default function Home() {
                 imagem={produto.imagem}
                 produto={produto.nome}
                 preco={produto.preco}
+                onClick={() => handleProductSelection(produto)}
               />
             ))
           )}
@@ -126,11 +152,17 @@ export default function Home() {
                 imagem={produto.imagem}
                 produto={produto.nome}
                 preco={produto.preco}
+                onClick={() => handleProductSelection(produto)}
               />
             ))
           )}
         </Row>
       </Container>
+      <ModalCardProduto
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        selectedProduct={selectedProduct}
+      />
     </>
   )
 }
