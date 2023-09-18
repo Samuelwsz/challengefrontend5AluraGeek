@@ -1,5 +1,4 @@
 import styled from "@emotion/styled"
-import Card from "../Card"
 import { AiOutlineCloseCircle } from "react-icons/ai"
 
 const ModalOverlay = styled.div`

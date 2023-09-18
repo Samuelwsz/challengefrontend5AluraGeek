@@ -1,7 +1,5 @@
 import { Container, Row } from "react-grid-system"
 import styled from "@emotion/styled"
-import Botao from "../../components/Botao"
-import { Link } from "react-router-dom"
 import Card from "../../components/Card"
 
 import produtos from "../../json/produtos.json"
