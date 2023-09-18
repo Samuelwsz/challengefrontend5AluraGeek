@@ -1,7 +1,6 @@
 import { Container, Row } from "react-grid-system"
 import styled from "@emotion/styled"
 import Card from "../../components/Card"
-
 import produtos from "../../json/produtos.json"
 import { useSearch } from "../../context/InputFuncional"
 import { useState } from "react"
