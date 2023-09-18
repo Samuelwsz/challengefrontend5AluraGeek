@@ -25,4 +25,4 @@ npm run dev
 
 ## Projeto finalizado
 
-[Link](https://challengefrontend5-alura-geek-no8g.vercel.app/)
+[Link](https://challengefrontend5-alura-geek.vercel.app/)
