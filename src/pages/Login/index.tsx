@@ -47,7 +47,7 @@ export default function Login() {
   } = useForm<FormProps>({ resolver: zodResolver(schema) })
 
   const handleLogin = (data: any) => {
-    if (email === "usuario@gmail.com" && password === "1234") {
+    if (email === "user@gmail.com" && password === "1234") {
       setError(false)
       navigate("/addproduto")
     } else {

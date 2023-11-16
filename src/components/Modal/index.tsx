@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { useEffect, useRef } from "react"
 import { AiOutlineCloseCircle } from "react-icons/ai"
 
 const ModalOverlay = styled.div`
@@ -11,7 +12,7 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   z-index: 1;
 `
 
@@ -29,7 +30,6 @@ const DivModal = styled.div`
   .image-column {
     flex: 1; /* A coluna da imagem ocupa 1 unidade de flex */
     padding-right: 20px; /* Espaçamento à direita */
-    
   }
 
   /* Estilos para a coluna direita (texto) */
@@ -69,17 +69,38 @@ export default function ModalCardProduto({
   onClose,
   selectedProduct,
 }: ModalCardProdutoProps) {
+  //clicar fora do modal para fechar
+  const modalRef = useRef<HTMLDivElement>(null)
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      onClose()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside)
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [handleClickOutside])
+
   if (!isOpen || !selectedProduct) return null
 
   return (
     <>
       <ModalOverlay>
-        <DivModal>
+        <DivModal ref={modalRef}>
           <CloseButton onClick={onClose}>
             <CloseIcon />
           </CloseButton>
           <div className="image-column">
-            <img style={{borderRadius:'10px'}} src={selectedProduct.imagem} alt="" />
+            <img
+              style={{ borderRadius: "10px" }}
+              src={selectedProduct.imagem}
+              alt=""
+            />
           </div>
           <div className="text-column">
             <h2>{selectedProduct.nome}</h2>

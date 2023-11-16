@@ -42,9 +42,9 @@ export default function Produtos() {
   const { searchTerm } = useSearch()
 
   const filteredProdutos = produtos.filter(
-    (produto) =>
-      produto.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      produto.preco.toLowerCase().includes(searchTerm.toLowerCase())
+    (produto) => produto.nome.toLowerCase().includes(searchTerm.toLowerCase())
+    /*||
+      produto.preco.toLowerCase().includes(searchTerm.toLowerCase())*/
   )
 
   return (
